@@ -7,5 +7,6 @@ import br.com.springboot.treinamento.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+	
 
 }
