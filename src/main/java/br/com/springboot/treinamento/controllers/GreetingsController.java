@@ -31,23 +31,6 @@ public class GreetingsController {
     
 	@Autowired //Injeção de dependencia
 	private UsuarioRepository usuarioRepository;
-	
-    @RequestMapping(value = "/mostrarnome/{name}", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public String greetingText(@PathVariable String name) {
-        return "Hello " + name + "!";
-    }
-    
-    @RequestMapping(value= "/olamundo/{nome}", method= RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public String retornaOlaMundo(@PathVariable String nome) {
-    	
-    	Usuario usuario = new Usuario();
-    	usuario.setNome(nome);
-    	this.usuarioRepository.save(usuario); //Grava no banco
-    	
-    	return "Olá mundo "+nome;
-    }
     
     @GetMapping(value= "listatodos")
     @ResponseBody //Retorna os dados para o corpo da resposta

@@ -11,7 +11,7 @@
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
-	<h3>Spring boot rest api crud completo é</h3>
+	<h3>Primeiro CRUD Completo com SpringBoot</h3>
 
 	<form action="" id="formCadastroUser">
 		<div class="mb-3">
@@ -152,7 +152,8 @@
 					method : "POST",
 					url : "salvar",
 					data : JSON.stringify({
-						name : nome
+						nome : nome,
+						idade : idade
 					}),
 					contentType : "application/json; charset=utf-8",
 					success : function(response) {
