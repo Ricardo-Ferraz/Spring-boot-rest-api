@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+html{
+	margin: 5% 5% 0 5%;
+}
+
+.conteiner-table{
+	height: 300px;
+	overflow: scroll;
+}

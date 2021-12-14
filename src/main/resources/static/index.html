@@ -8,6 +8,7 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 	<h3>Spring boot rest api crud completo é</h3>
@@ -56,6 +57,7 @@
 						<button type="button" class="btn btn-success"
 							onclick="pesquisarUser()">Buscar</button>
 					</form>
+				<div class="conteiner-table">
 					<table class="table" id="tabelaresultados">
 						<thead>
 							<tr>
@@ -69,6 +71,7 @@
 
 						</tbody>
 					</table>
+				</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
@@ -144,7 +147,7 @@
 			var nome = $("#nome").val();
 			var idade = $("#idade").val();
 			
-			if(nome != ''){
+			if(nome.trim() != ''){
 				$.ajax({
 					method : "POST",
 					url : "salvar",
@@ -187,22 +190,11 @@
 		function botaoDeletarDaTela(){
 			var id = $("#id").val();
 			
-			if(id != ''){
-				if(confirm('Deseja realmente deletar o usuário com id: '+id+' ?')){
-					$.ajax({
-						method : "DELETE",
-						url : "delete",
-						data : "idUser= "+id,
-						success : function(response) {
-							$('#'+id).remove()
-							document.getElementById('formCadastroUser').reset()
-							alert(response)
-						}
-					}).fail(function(xhr, status, errorThrown) {
-						alert("Erro ao deletar por id: " + xhr.responseText);
-					});			
-				}
+			if(id.trim() != ''){
+				deleteUser(id);
+				document.getElementById('formCadastroUser').reset()
 			}
+			
 		}
 		
 	</script>
