@@ -22,10 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.treinamento.model.Usuario;
 import br.com.springboot.treinamento.repository.UsuarioRepository;
 
-/**
- *
- * A sample greetings controller to return greeting text
- */
+
 @RestController
 public class UsuarioController {
     
