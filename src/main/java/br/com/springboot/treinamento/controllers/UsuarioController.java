@@ -27,7 +27,7 @@ import br.com.springboot.treinamento.repository.UsuarioRepository;
  * A sample greetings controller to return greeting text
  */
 @RestController
-public class GreetingsController {
+public class UsuarioController {
     
 	@Autowired //Injeção de dependencia
 	private UsuarioRepository usuarioRepository;
